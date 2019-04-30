@@ -7,15 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: [
-        {
-          id: 1,
-          name: '',
-          birth_year: '',
-          gender: '',
-          mass: '',
-          height: ''
-        }],
+      people: [],
       columns: [
           {
           dataField: 'id',
@@ -51,17 +43,25 @@ class App extends Component {
   }
 
   getData() {
-    axios.get('https://swapi.co/api/people/1').then(response => console.log(response))
-    .catch(error => this.setState({ error, isLoading: false }));
-  }
+      axios.get('https://swapi.co/api/people/1').then(response => this.setState({ people: [{
+      name: response.data.name,
+      birth_year: response.data.birth_year,
+      gender: response.data.gender,
+      mass: response.data.mass,
+      height: response.data.height
+       }]
+      }))
+      .catch(error => this.setState({ error, isLoading: false }));
+    }
 
   render() {
     return (
-      <div className= "container"  >
+      <div className="container"  style={{ marginTop: 50 }}>
         <BootstrapTable
-         data= { this.state.people }
-         columns= { this.state.columns }
-         keyField= 'id' />
+        keyField= 'id'
+        data={ this.state.people }
+        columns={ this.state.columns }
+        />
       </div>
     );
   }
