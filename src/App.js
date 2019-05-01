@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Cards from './components/cards.jsx';
 import styles from './App.css';
 import Navbar from 'react-bootstrap/Navbar';
+import  ExposedFunctionTable from './components/expandedTable.js'
 
 
 class App extends Component {
@@ -86,6 +87,14 @@ class App extends Component {
       fontSize: 40,
       textAlign: "center"
     };
+    const expandRow = {
+      renderer: row => (
+        <div>
+          <p> Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known. Along with his friends Princess Leia and Han Solo, Luke battled the evil Empire, discovered the truth of his parentage, and ended the tyranny of the Sith. A generation later, the location of the famed Jedi master was one of the galaxy’s greatest mysteries. Haunted by Ben Solo’s fall to evil and convinced the Jedi had to end, Luke sought exile on a distant world, ignoring the galaxy’s pleas for help. But his solitude would be interrupted – and Luke Skywalker had one final, momentous role to play in the struggle between good and evil. src: 'https://www.starwars.com/databank/luke-skywalker </p>
+        </div>
+      ),
+      showExpandColumn: true
+    };
     return (
     <Container fluid>
     <Navbar fixed="top">
@@ -105,6 +114,8 @@ class App extends Component {
           data={ this.state.people }
           columns={ this.state.columns }
           rowStyle= { rowStyle }
+          ref={ n => this.node = n }
+          expandRow={ expandRow }
           />
       </div>
     </Container>
