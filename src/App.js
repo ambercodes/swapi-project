@@ -8,8 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Cards from './components/cards.jsx';
 import styles from './App.css';
 import Navbar from 'react-bootstrap/Navbar';
-import  ExposedFunctionTable from './components/expandedTable.js'
-
 
 class App extends Component {
   constructor(props) {
@@ -84,7 +82,7 @@ class App extends Component {
       display: "inline-block",
       fontFamily: "Star Jedi",
       src: 'https://www.dafont.com/star-jedi.font',
-      fontSize: 40,
+      fontSize: 70,
       textAlign: "center"
     };
     const expandRow = {
@@ -114,7 +112,6 @@ class App extends Component {
           data={ this.state.people }
           columns={ this.state.columns }
           rowStyle= { rowStyle }
-          ref={ n => this.node = n }
           expandRow={ expandRow }
           />
       </div>
