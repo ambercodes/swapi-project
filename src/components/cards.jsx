@@ -1,10 +1,9 @@
 import React from 'react';
-import lukeSkywalker from '/Users/work/Desktop/swapi-project/swapi-project/src/images/lukeSkywalker.png';
-import darthVader from '/Users/work/Desktop/swapi-project/swapi-project/src/images/darthVader.png';
-import princessLeia from '/Users/work/Desktop/swapi-project/swapi-project/src/images/princessLeia.png';
-import yoda from '/Users/work/Desktop/swapi-project/swapi-project/src/images/yoda.png';
-import c3p0 from '/Users/work/Desktop/swapi-project/swapi-project/src/images/c3p0.png';
-
+import lukeSkywalker from './images/lukeSkywalker.png';
+import darthVader from './images/darthVader.png';
+import princessLeia from './images/princessLeia.png';
+import yoda from './images/yoda.png';
+import c3p0 from './images/c3p0.png';
 
 function Cards() {
  return(
